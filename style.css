@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E3E7E9;
+    font-family: system-ui;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: all 0.5s;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+header {
+    
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+header .shopping {
+    position: relative;
+    text-align: right;
+    cursor: pointer;
+}
+
+header .shopping img {
+   width: 40px;
+}
+
+.quantity {
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px
+}
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+  column-gap: 30px;
+  row-gap: 30px; 
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.card {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width:  500px;
+/* background-color: #473E3C;*/
+background-color: #8EC5FC;
+background-image: linear-gradient(to top, #a0a7aa 0%, #c4ccd1 100%);
+
+    height: 100vh;
+    transition:  0.5s;
+}
+
+.card-top {
+    background-color: #000;
+    color: #E2B008;
+    margin:  0;
+    padding: 0 20px;
+    height: 80px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-top h1 { 
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.fa-trash-can {
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.fa-trash-can:hover {
+    color: red;
+}
+
+.card .checkout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card .checkout div {
+    background-color: #E2B008;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight:  bold;
+    cursor:  pointer;
+}
+
+.card .checkout div:nth-child(2) {
+    background-color: #000;
+    color: #fff;
+}
+
+.active .card {
+    left: calc(100% - 500px);
+}
+
+.active  .container {
+    transform: translateX(-150px);
+ }
+ 
+.list .item {
+   align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 12px 5px #0000002e;;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.4s;
+}
+
+.list .item:hover {
+    transform: scale(1.01);
+    box-shadow: 0 50px 50px #757667;
+}
+
+.list .item img {
+    width: 90%;
+    height: 70%;
+}
+
+.list .item .title {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.list .item .price{
+    font-size: 20px;
+    font-weight: 600;
+    color: #3e3e3e;
+}
+
+.item-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.list .item button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    width: 90%;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    border: 2px solid #000;
+    cursor: pointer;
+}
+
+.list .item button:hover {
+    transform: scale(1.01);
+    text-shadow: 0 0 4px #fff;    
+}
+
+.list .item button:active{
+    transform: scale(1);
+    text-shadow: 0 0 0px #fff;
+}
+
+.list-card li {
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #000;
+    background-color: #fff;
+    row-gap: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 75px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 3px #0000002e;
+}
+
+.list-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 130px);
+    padding-top: 20px;
+    overflow: auto;
+}
+
+
+
+.list-card li div {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+.li-name{
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.li-price{
+    font-size: 1.1rem;
+    letter-spacing: 0.8px;
+}
+
+.list-card li img {
+    width: 65%;
+}
+
+.list-card button {
+    box-shadow: 3px 3px 6px #c5c5c5, -3px -3px 6px #ffffff;
+    border: 1px solid #e8e8e8;
+    width: 25px;
+    height: 25px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   border-radius: 50%;
+   background-color: #e4e8ea;
+   transition: all 0.3s;
+   cursor: pointer;
+}
+
+.list-card button:hover{
+    border: 1px solid white;
+}
+
+.list-card button:active{
+    box-shadow: 2px 2px 6px #c5c5c5, -2px -2px 6px #ffffff;
+}
+
+
+.list-card .count {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 10px;
+}
+
+
+@media (max-width: 690px) {
+    .card {
+       width: 100%; 
+    }
+     .active .card {
+        left: 0;
+    }
+    .active .container {
+        transform: translateX(0px);
+    }
+    .fa-trash-can {
+        color: red;
+    }
+   header h1{
+      font-size: 1.6rem;
+      display: flex;
+      align-items: center;
+   }
+}
